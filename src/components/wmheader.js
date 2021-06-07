@@ -45,7 +45,7 @@ const Header = () => {
         <div className="headertab">
            <ul>
                <li><Link to= "#">Pickup and delivery</Link></li>
-               <li><Link to="#">Walmart.com</Link></li>
+               <li><Link to="/admin">Walmart.com</Link></li>
            </ul>
         </div>
         <div className="headernav">
@@ -57,7 +57,7 @@ const Header = () => {
             <button className="searchbarimg"><img src={Search} alt="search-nav"/></button>
         </div>
         <div className="list-3">
-            <span className="list-3img"><img src={Usernav} alt="user-nav"/>
+            <span className="list-3img"><Link to="signin"><img src={Usernav} alt="user-nav"/></Link>
                </span>
                <p className="list-3txt">Account</p>
             

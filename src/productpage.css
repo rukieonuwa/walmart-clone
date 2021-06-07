@@ -1,0 +1,11 @@
+.details{
+    padding:30px;
+
+    display:flex;
+    justify-content: space-between;
+}
+
+.details img{
+    width: 300px;
+
+}

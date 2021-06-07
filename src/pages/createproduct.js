@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {Link} from "react-router-dom";
 
 const Createproduct = () => {
     let [image, setImage] = useState("");
@@ -12,6 +13,30 @@ const Createproduct = () => {
 
     return (
         <div>
+        <div className="adminpage">
+         
+            
+         <div className="navigation">
+           <div className="admin">
+               <h2> <Link to="/admin">ADMIN</Link></h2>
+           </div>
+           <div className="allproducts">
+               <p> <Link to="/allproducts">ALL PRODUCTS</Link></p>
+           </div>
+           <div className="createproducts">
+               <p> <Link to="/createproduct">CREATE PRODUCT</Link></p>
+           </div>
+           <div className="allusers">
+               <p> <Link to="#">ALL USERS</Link></p>
+           </div>
+           <div className="createusers">
+               <p><Link to="#">CREATE USERS</Link></p>
+           </div>
+           
+           <div className="emptyspace">
+               <h2>EMPTY</h2>
+           </div>
+        </div>
             <div className="form">
                 <h1>CREATE PRODUCT</h1>
            <div>
@@ -88,6 +113,7 @@ const Createproduct = () => {
             <button className="button">Submit</button>
           </div>
           </form>
+          </div>
           </div>
           </div>
         </div>

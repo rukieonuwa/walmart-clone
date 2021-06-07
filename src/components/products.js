@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ const Products = ()=>{
           .catch(e => {
                 console.log(e);
           })
-    });
+    }, []);
 
 
 
@@ -29,13 +30,13 @@ const Products = ()=>{
          <div className="grid-container">
                  {
             product.map(x =>
-                  <div className="column" key={x.id} >
+                  <Link to={`/product/${x._id}`} className="column" key={x.id} >
                     <div className="row"><img src={"http://206.189.124.254:9000" + x.image} alt="product" /></div>
                     <div className="row">{x.name}</div>
                     <div className="row">{x.quantity}</div>
                     <div className="row">{x.price}</div>
                     <div className="row">{x.description}</div>
-                 </div>
+                 </Link>
             )
                  }            
          </div>   

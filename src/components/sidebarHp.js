@@ -95,7 +95,7 @@ const Sidebar = () => {
             <img src={img13} alt="angle right" />
           </div>
           <div >
-            <p><Link className="pharmHealthPersCare" to="#">Pharmacy, Health and Personal Care</Link></p>
+            <p><Link className="pharmHealthPersCare" to="shoppage">Pharmacy, Health and Personal Care</Link></p>
             <img src={img13} alt="angle right" />
           </div>
           <hr />

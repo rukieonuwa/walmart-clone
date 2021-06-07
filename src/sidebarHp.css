@@ -36,9 +36,9 @@
 }
 
 .sbarwdth-container {
-    position: fixed;
+    position: absolute;
     top: 40px;
-    z-index: 20;;
+    z-index: 20;
     left: 0px;
     transition: 0.3s;
     transform: translateX(-10000px);
