@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/walmart-clone/static/css/main.e2c659c0.chunk.css",
-    "main.js": "/walmart-clone/static/js/main.4e13d8c3.chunk.js",
-    "main.js.map": "/walmart-clone/static/js/main.4e13d8c3.chunk.js.map",
+    "main.js": "/walmart-clone/static/js/main.1de5c426.chunk.js",
+    "main.js.map": "/walmart-clone/static/js/main.1de5c426.chunk.js.map",
     "runtime-main.js": "/walmart-clone/static/js/runtime-main.3294e8bf.js",
     "runtime-main.js.map": "/walmart-clone/static/js/runtime-main.3294e8bf.js.map",
     "static/css/2.6b560088.chunk.css": "/walmart-clone/static/css/2.6b560088.chunk.css",
@@ -77,6 +77,6 @@
     "static/css/2.6b560088.chunk.css",
     "static/js/2.63e59a4f.chunk.js",
     "static/css/main.e2c659c0.chunk.css",
-    "static/js/main.4e13d8c3.chunk.js"
+    "static/js/main.1de5c426.chunk.js"
   ]
 }
