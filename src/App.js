@@ -19,9 +19,9 @@ import Productview from "./pages/productpage";
 export default function App() {
   return (
    <ToggleWrapper>
-		 <Router>
+		 <Router basename="/walmart-clone">
       <Switch>
-        <Route path="/" exact>
+        <Route path="/" exact >
           <Homepage />
         </Route>
         <Route path="/homepage">
