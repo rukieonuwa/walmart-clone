@@ -317,6 +317,9 @@ START OF WALMART HOMEPAGE
     cursor: pointer;
 }
 
+.navform{
+    position: relative;
+}
 .navform input{
     border-radius: 20px;
     font-size: 12px;
@@ -325,11 +328,12 @@ START OF WALMART HOMEPAGE
     border: none;
 }
 .searchbarimg{
+    position: absolute;
     outline: none;
     border: none;
     background-color: white;
-    margin-bottom: -50px;
-   margin-left: -50px;
+    bottom: 8px;
+    right: 21px;
 
 }
 .searchbarimg img{
