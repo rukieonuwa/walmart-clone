@@ -1,5 +1,5 @@
-import React,{useState, useEffect} from "react";
-import {Link} from "react-router-dom";
+import React,{useState} from "react";
+import {Link, useHistory} from "react-router-dom";
 import "../signin.css";
 
 
@@ -7,36 +7,38 @@ const Signin = () => {
     let [email, setEmail] = useState("");
     let [password, setPassword] = useState("");
     let [error, setError] = useState("");
-    let [result, setResult] = useState("");
-
-    useEffect(() => {
-        fetch("http://206.189.124.254:9000/users")
-          .then(res => res.json())
-          .then(res => {
-               let resu = res.find(function(val){
-                if (val.password === password && val.email === email){
-                      return resu;
-                }
-                
-
-            })
-            setResult(resu);
-              
-          })
-          .catch(e => {
-                console.log(e);
-          })
-    });
-
+    //let [result, setResult] = useState("");
+    let history = useHistory();
+   
     let btnSignIn = () => {
+     let body = {
+       email: email,
+       password: password
+     }
+
+      fetch("http://206.189.124.254:9000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      })
+        .then(res => res.json())
+        .then(res => { 
+          if (res.error){
+            setError("Invalid username or password");
+          } else{
+            history.push('/homepage')
+          }
+        })
+         
+              
+          
         
-        if (result) {
-          setError("");
-          <Link to="/homepage"></Link>
-        }else {
-          setError("Invalid username or password");
-        }
+        
       };
+
+      
 
 
 
@@ -44,7 +46,7 @@ const Signin = () => {
         <div className="signin-container">
         <div className="signin">
             <p className="signin-head">Sign in to your Walmart account</p>
-            <form action="http://206.189.124.254:9000/login" method="post">
+            <div>
               <div className="form-input">
             <input 
               id="email"
@@ -73,7 +75,7 @@ const Signin = () => {
                    </button>
                </div>
 
-            </form>
+            </div>
 
             <div>
                 <p>Don't have an account?</p>

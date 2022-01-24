@@ -49,14 +49,15 @@ const Allproducts = () => {
     }
 
     let saveEdit = (id) => {
-        // const body = {
-        //     name,
-        //     rating,
-        //     description,
-        //     category,
-        //     price
-        // }
-        fetch(`http://206.189.124.254:9000/update/product/${id}`, { method: 'PUT'})
+        let body = {
+            name,
+            rating,
+            description,
+            category,
+            price
+        }
+        body = JSON.stringify(body)
+        fetch(`http://206.189.124.254:9000/update/product/${id}`, { method: 'PUT', body: body})
             .then(res => res.json())
             .then(res => {
                 alert("product updated");
@@ -116,7 +117,7 @@ const Allproducts = () => {
                         {product.map(x => (
                             edit && x._id === editItem ? (
                                 <div className="row body" >
-                                    <div className="row_item"><img src={"http://206.189.124.254:9000" + x.image} key={x.id} height="40" width="40" /></div>
+                                    <div className="row_item"><img src={"http://206.189.124.254:9000" + x.image} key={x.id} height="40" width="40" alt=""/></div>
                                     <input className="row_name" onChange={(e) => setName(e.target.value)}
                                         value={name} />
                                     <input className="row_item" onChange={(e) => setDescription(e.target.value)}
@@ -132,7 +133,7 @@ const Allproducts = () => {
                                 </div>
                             ) : (
                                 <div className="row body" >
-                                    <div className="row_item"><img src={"http://206.189.124.254:9000" + x.image} key={x.id} height="40" width="40" /></div>
+                                    <div className="row_item"><img src={"http://206.189.124.254:9000" + x.image} key={x.id} height="40" width="40" alt="" /></div>
                                     <div className="row_name">{x.name}</div>
                                     <div className="row_item">{x.description}</div>
                                     <div className="row_price">{x.price}</div>

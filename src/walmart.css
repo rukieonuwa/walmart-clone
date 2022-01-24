@@ -17,6 +17,10 @@ body{
     align-items: center;
     background-color: white;
 }
+
+button{
+    cursor: pointer;
+}
 .form h3{
    letter-spacing: 1px;
    text-align: center;
@@ -253,11 +257,6 @@ body{
     width: 100px;
     margin:0 10px;
 }
-.loading{
-    text-align: center; 
-    margin: 100px; 
-    background-color: orange;
-     border-radius: 20px; padding:10px;}
 
 /* End of admin form
 

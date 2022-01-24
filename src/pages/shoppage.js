@@ -8,6 +8,7 @@ const Shoppage = () =>{
     return(
         <div>
           <Header/>
+         
           <div className="header2">
               <p>Personal Care/ Bath and Body</p>
               <div className="header-Col2">

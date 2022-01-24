@@ -38,7 +38,8 @@ const Holder = () => {
   );
 };
 const Header = () => {
-
+  let state = useContext(ToggleBar);
+  let[, setCartview] = state.cartbar;
     return(
         <div>
              <div className="navigation">
@@ -57,15 +58,15 @@ const Header = () => {
             <button className="searchbarimg"><img src={Search} alt="search-nav"/></button>
         </div>
         <div className="list-3">
-            <span className="list-3img"><Link to="signin"><img src={Usernav} alt="user-nav"/></Link>
+            <span className="list-3img"><Link to="/signin"><img src={Usernav} alt="user-nav"/></Link>
                </span>
                <p className="list-3txt">Account</p>
             
-            <span className="list-3img"><img src={Heart} alt="heart-nav"/>
+            <span className="list-3img"><Link to="/admin"><img src={Heart} alt="heart-nav"/></Link>
             </span>
             <p className="list-3txt">My Items</p>
            
-            <span className="list-3img"><img src={Cartnav} alt="cart-nav"/></span>
+            <span className="list-3img"><img onClick={() => setCartview(true)} className="cart" src={Cartnav} alt="cart-nav"/></span>
         </div>
         </div>
     </div>

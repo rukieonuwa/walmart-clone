@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import {Link,
+import {
 useParams} from "react-router-dom";
 import "../productpage.css";
 import Footer from "../components/footer";
@@ -23,13 +23,14 @@ const Productview = () => {
           .catch(e => {
                 console.log(e);
           })
-    }, []);
+    }, [id]);
 
 
     return(
         <div>
         <Header/>
         <Sidebar/>
+       
         <div className="details">
         <div className=""><img src={"http://206.189.124.254:9000" + details.image} alt="product" /></div>
                 <div className="col2">

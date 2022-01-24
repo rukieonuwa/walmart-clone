@@ -5,6 +5,7 @@ import GridBanner from "../components/grid_banner";
 import ShopCategories from "../components/shop_category";
 import Footer from "../components/footer";
 import Sidebar from "../components/sidebarHp";
+import Cartsection from "../components/cartsection";
 
 
 
@@ -14,6 +15,7 @@ const Homepage = () => {
         <div>
           <Header/>
           <Sidebar/>
+          <Cartsection/>
           <Banner/>
           <GridBanner/>
           <ShopCategories/>

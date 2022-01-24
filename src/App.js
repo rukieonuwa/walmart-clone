@@ -9,7 +9,7 @@ import Allproducts from "./pages/allproducts";
 import Homepage from "./pages/homepage";
 import Shoppage from "./pages/shoppage";
 import Signin from "./pages/signin";
-import Create from "./pages/createaccount";
+//import Create from "./pages/createaccount";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ToggleWrapper } from "./context/toggle";
 import Createaccount from './pages/createaccount';
