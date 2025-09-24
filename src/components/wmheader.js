@@ -1,4 +1,4 @@
-import React,{useContext} from "react";
+import React, { useContext } from "react";
 import { ToggleBar } from "../context/toggle";
 import { Link } from "react-router-dom";
 import Menu from "../assets/images/svg/menu-white.760aac729c86acf087c20c69b06b9a0875db4e8d.svg";
@@ -10,8 +10,8 @@ import Cartnav from "../assets/images/svg/cart-nav-white.00018279d92b8685ff0d50c
 
 
 const Holder = () => {
-  let state = useContext(ToggleBar);
-  let [, setToggle] = state.sidebar;
+  const { sidebar } = useContext(ToggleBar);
+  let [, setToggle] = sidebar;
   return (
     <div className="flex">
       <img
@@ -38,47 +38,50 @@ const Holder = () => {
   );
 };
 const Header = () => {
-  let state = useContext(ToggleBar);
-  let[, setCartview] = state.cartbar;
-    return(
-        <div>
-             <div className="navigation">
+  let { cartbar, cartItems } = useContext(ToggleBar);
+  let [, setCartview] = cartbar;
+  console.log("Cart items in header:", cartItems.length);
+  return (
+    <div>
+      <div className="navigation">
         <div className="headertab">
-           <ul>
-               <li><Link to= "#">Pickup and delivery</Link></li>
-               <li><Link to="/admin">Walmart.com</Link></li>
-           </ul>
+          <ul>
+            <li><Link to="#">Pickup and delivery</Link></li>
+            <li><Link to="/admin">Walmart.com</Link></li>
+          </ul>
         </div>
         <div className="headernav">
-        <div>
-              <Holder/>
-        </div>
-        <div className="navform">
+          <div>
+            <Holder />
+          </div>
+          <div className="navform">
             <input type="text" placeholder="Search Walmart.com" />
-            <button className="searchbarimg"><img src={Search} alt="search-nav"/></button>
-        </div>
-        <div className="list-3">
-            <span className="list-3img"><Link to="/signin"><img src={Usernav} alt="user-nav"/></Link>
-               </span>
-               <p className="list-3txt">Account</p>
-            
-            <span className="list-3img"><Link to="/admin"><img src={Heart} alt="heart-nav"/></Link>
+            <button className="searchbarimg"><img src={Search} alt="search-nav" /></button>
+          </div>
+          <div className="list-3">
+            <span className="list-3img"><Link to="/signin"><img src={Usernav} alt="user-nav" /></Link>
+            </span>
+            <p className="list-3txt">Account</p>
+
+            <span className="list-3img"><Link to="/admin"><img src={Heart} alt="heart-nav" /></Link>
             </span>
             <p className="list-3txt">My Items</p>
-           
-            <span className="list-3img"><img onClick={() => setCartview(true)} className="cart" src={Cartnav} alt="cart-nav"/></span>
+
+            <span className="list-3img">
+              <img onClick={() => setCartview(true)} className="cart" src={Cartnav} alt="cart-nav" />
+              {!!cartItems.length && <span>{cartItems.length}</span> }
+            </span>
+          </div>
         </div>
-        </div>
+      </div>
+
+      <div className="covidawareness">
+        <p>Book a Covid-19 vaccine. Available at no cost, per eligibility</p>
+        <p><Link to="#">Schedule now</Link></p>
+      </div>
     </div>
-    
-    
-       <div className="covidawareness">
-            <p>Book a Covid-19 vaccine. Available at no cost, per eligibility</p>
-            <p><Link to="#">Schedule now</Link></p>
-       </div>
-        </div>
-    );
-    }
+  );
+}
 
 
 export default Header;

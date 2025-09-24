@@ -6,6 +6,7 @@ import { ToggleBar } from "../context/toggle";
 const Cartsection = () => {
     let state = useContext(ToggleBar);
     let [cartview, setCartview] = state.cartbar;
+    let { cartItems } = state;
   
     return (
       <div className={cartview ? "cartbar opencart" : "cartbar"}>
@@ -25,6 +26,25 @@ const Cartsection = () => {
           </div>
 
           <div className="cart-content">
+            <h3 className="pad5">Shopping Cart</h3>
+            <p className="pad5">Items in your cart</p>
+            <div className="cart-items">
+              {cartItems.length === 0 ? (
+                <p className="pad5">Your cart is empty</p>
+              ) : (
+                cartItems.map((item, index) => (
+                  <div key={index} className="cart-item flex space-btw pad5">
+                    <div className="cart-item-info">
+                      <p>{item.title}</p>
+                      <p>${item.priceMin.toFixed(2)}</p>
+                    </div>
+                    <div className="cart-item-img">
+                      <img src={item.image} alt={item.title} />
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
               
           </div>
         </div>

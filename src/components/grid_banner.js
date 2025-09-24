@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Grid1 from "../assets/images/homepage_img/k2-_9c66a916-9209-4d38-9ca8-66a02f3c7f87.v1.jpg";
 import Grid2 from "../assets/images/homepage_img/k2-_7c012544-6e3d-4e4d-a9d7-148bd7eae274.v1.jpg";
@@ -7,9 +7,49 @@ import Grid4 from "../assets/images/homepage_img/d648e0fc-25d4-4759-9b6e-fa1ec4c
 import Grid5 from "../assets/images/homepage_img/6b71d05c-23e3-4f3a-9eff-09002563086b_1.ef47bb922f9a53465ed49326cc8e6936.jpeg";
 import Grid6 from "../assets/images/homepage_img/048f43da-9da0-43fd-b499-4a8dc18a40c1.2c7fcb7a2a36197aa60bf40e29d57af3.jpeg";
 import Grid7 from "../assets/images/homepage_img/05da93cc-eaf7-479e-b7dc-8edae6f65aca.48a84e0b65c0935bbce8c4c90cf6c0f2.jpeg";
+import { ToggleBar } from "../context/toggle";
 
+const gridProducts = [
+  {
+    img: Grid4,
+    title: "Johnson's Head-To-Toe Tearless Gentle",
+    subtitle: "Baby Wash and Shampoo",
+    priceMin: 3.92,
+    priceMax: 19.90,
+    delivery: "2-day delivery",
+    button: "Choose options"
+  },
+  {
+    img: Grid5,
+    title: "Dove Nutritive Solutions Shampoo with Pump",
+    subtitle: "Intensive Repair, 31 oz",
+    priceMin: 6.98,
+    priceMax: 6.98,
+    delivery: "2-day delivery",
+    button: "Add to cart"
+  },
+  {
+    img: Grid6,
+    title: "Dove Advanced Care Dry Spray Antipespirant",
+    subtitle: "Deodorant Powder Soft 3.8 oz",
+    priceMin: 6.18,
+    priceMax: 6.18,
+    delivery: "2-day delivery",
+    button: "Choose options"
+  },
+  {
+    img: Grid7,
+    title: "Degree Men Antipespirant Deodorant Stick Cool",
+    subtitle: "Rush 2.7 oz (Twin Pk)",
+    priceMin: 4.47,
+    priceMax: 4.47,
+    delivery: "2-day delivery",
+    button: "Choose options"
+  }
+];
 
 const GridBanner = () => {
+    const { addToCart } = useContext(ToggleBar);
 
    return(
         <div>
@@ -58,46 +98,26 @@ const GridBanner = () => {
             <div className="section4">
                  <p className="shoppingExperience">Continue your shopping experience</p>
                  <div className="sec4Products">
-                     <div className="product1">
-                        <div>
-                            <img src={Grid4} alt=""/>
-                        </div>
-                           <p>Johnson's Head-To-Toe Tearless Gentle  </p>
-                           <p>Baby Wash and Shampoo</p>
-                           <h4>$3.92-$19.90</h4>
-                           <p>2-day delivery</p>
-                           <button>Choose options</button>
-                     </div>
-                     <div className="product2">
-                        <div>
-                            <img src={Grid5} alt=""/>
-                        </div>
-                           <p>Dove Nutritive Solutions Shampoo with Pump</p>
-                           <p>Intensive Repair, 31 oz</p>
-                           <h4>$6.98</h4>
-                           <p>2-day delivery</p>
-                           <button>Add to cart</button>
-                     </div>
-                     <div className="product3">
-                        <div>
-                            <img src={Grid6} alt=""/>
-                        </div>
-                           <p>Dove Advanced Care Dry Spray Antipespirant</p>
-                           <p>Deodorant Powder Soft 3.8 oz </p>
-                           <h4>$6.18</h4>
-                           <p>2-day delivery</p>
-                           <button>Choose options</button>
-                     </div>
-                     <div className="product4">
-                        <div>
-                            <img src={Grid7} alt=""/>
-                        </div>
-                           <p>Degree Men Antipespirant Deodorant Stick Cool</p>
-                           <p>Rush 2.7 oz (Twin Pk)</p>
-                           <h4>$4.47</h4>
-                           <p>2-day delivery</p>
-                           <button>Choose options </button>
-                     </div>
+                   {gridProducts.map((item, idx) => {
+                     const priceDisplay = item.priceMin === item.priceMax
+                       ? `$${item.priceMin.toFixed(2)}`
+                       : `$${item.priceMin.toFixed(2)}-$${item.priceMax.toFixed(2)}`;
+                     const isAddToCart = item.button === "Add to cart";
+                     return (
+                       <div className={`product${idx + 1}`} key={idx}>
+                         <div>
+                           <img src={item.img} alt="" />
+                         </div>
+                         <p>{item.title}</p>
+                         <p>{item.subtitle}</p>
+                         <h4>{priceDisplay}</h4>
+                         <p>{item.delivery}</p>
+                         <button onClick={() => isAddToCart && addToCart(item)}>
+                           {item.button}
+                         </button>
+                       </div>
+                     );
+                   })}
                  </div>
                  <div className="dots">
                     <span class="dot"></span>

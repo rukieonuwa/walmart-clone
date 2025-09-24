@@ -4,12 +4,18 @@ export const ToggleBar = createContext();
 export const ToggleWrapper = ({ children }) => {
   let [toggle, setToggle] = useState(false);
   let [cartview, setCartview] = useState(false);
+  let [cartItems, setCartItems] = useState([]);
   
    let state = {
     sidebar: [toggle, setToggle],
     cartbar: [cartview, setCartview],
-   // addcart: [addtocart, setAddtocart]
-    
+    cartItems,
+    addToCart(item) {
+      setCartItems([...cartItems, item])
+    },
+    clearCartItems() {
+      setCartItems([])
+    }
   };
 
   
