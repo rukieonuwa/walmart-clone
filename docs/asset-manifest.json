@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/walmart-clone/static/css/main.205bb345.chunk.css",
-    "main.js": "/walmart-clone/static/js/main.1387bbe6.chunk.js",
-    "main.js.map": "/walmart-clone/static/js/main.1387bbe6.chunk.js.map",
+    "main.css": "/walmart-clone/static/css/main.6d9daf8f.chunk.css",
+    "main.js": "/walmart-clone/static/js/main.7aca668f.chunk.js",
+    "main.js.map": "/walmart-clone/static/js/main.7aca668f.chunk.js.map",
     "runtime-main.js": "/walmart-clone/static/js/runtime-main.3294e8bf.js",
     "runtime-main.js.map": "/walmart-clone/static/js/runtime-main.3294e8bf.js.map",
     "static/css/2.6b560088.chunk.css": "/walmart-clone/static/css/2.6b560088.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.a2516b19.chunk.js.map": "/walmart-clone/static/js/2.a2516b19.chunk.js.map",
     "index.html": "/walmart-clone/index.html",
     "static/css/2.6b560088.chunk.css.map": "/walmart-clone/static/css/2.6b560088.chunk.css.map",
-    "static/css/main.205bb345.chunk.css.map": "/walmart-clone/static/css/main.205bb345.chunk.css.map",
+    "static/css/main.6d9daf8f.chunk.css.map": "/walmart-clone/static/css/main.6d9daf8f.chunk.css.map",
     "static/js/2.a2516b19.chunk.js.LICENSE.txt": "/walmart-clone/static/js/2.a2516b19.chunk.js.LICENSE.txt",
     "static/media/05da93cc-eaf7-479e-b7dc-8edae6f65aca.48a84e0b65c0935bbce8c4c90cf6c0f2.5db492ad.jpeg": "/walmart-clone/static/media/05da93cc-eaf7-479e-b7dc-8edae6f65aca.48a84e0b65c0935bbce8c4c90cf6c0f2.5db492ad.jpeg",
     "static/media/0a446936-6623-460f-96dc-80635c844efe.8e0eb5b0be9ca1dbafc6c45a8d65d46b.79c46bf6.png": "/walmart-clone/static/media/0a446936-6623-460f-96dc-80635c844efe.8e0eb5b0be9ca1dbafc6c45a8d65d46b.79c46bf6.png",
@@ -76,7 +76,7 @@
     "static/js/runtime-main.3294e8bf.js",
     "static/css/2.6b560088.chunk.css",
     "static/js/2.a2516b19.chunk.js",
-    "static/css/main.205bb345.chunk.css",
-    "static/js/main.1387bbe6.chunk.js"
+    "static/css/main.6d9daf8f.chunk.css",
+    "static/js/main.7aca668f.chunk.js"
   ]
 }

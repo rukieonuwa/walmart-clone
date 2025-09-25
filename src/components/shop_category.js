@@ -39,6 +39,7 @@ import img36 from "../assets/images/homepage_img/k2-_f17826ad-56e1-4a75-b243-a5e
 import img37 from "../assets/images/homepage_img/k2-_5b931f9f-b084-4645-b0d8-e6e2e841973b.v1.jpg";
 import img38 from "../assets/images/homepage_img/k2-_4419eef7-6e5c-4c52-8709-656cec4026a4.v1.jpg";
 import { ToggleBar } from "../context/toggle";
+import { getImageUrl } from "./utils";
 
 const categoryItems = [
   { img: img1, label: "Video games" },
@@ -56,6 +57,7 @@ const categoryItems = [
 const productItemsSection6 = [
   {
     img: img11,
+    imagePath: "/homepage_img/0fa71b04-be4b-4047-a71a-474b8473907b_1.55a31d95fa88d2fd138fbbd971e64960.jpeg",
     title: "Johnson's Head-To-Toe Tearless Gentle",
     subtitle: "Baby Wash and Shampoo",
     priceMin: 3.92,
@@ -64,6 +66,7 @@ const productItemsSection6 = [
   },
   {
     img: img12,
+    imagePath: "/homepage_img/1bef212f-5145-43d9-a4e4-e8b505ea8454_1.0ea7e4d72dee7b96d1adcb1ab5ffefad.jpeg",
     title: "Dove Nutritive Solutions Shampoo with Pump",
     subtitle: "Intensive Repair, 31 oz",
     priceMin: 6.98,
@@ -72,6 +75,7 @@ const productItemsSection6 = [
   },
   {
     img: img13,
+    imagePath: "/homepage_img/7af6debf-6826-4ec1-935b-3678bb5de22f_1.e54b6dca206e94c8fef482f051a65b42.jpeg",
     title: "Dove Advanced Care Dry Spray Antipespirant",
     subtitle: "Deodorant Powder Soft 3.8 oz",
     priceMin: 6.18,
@@ -80,6 +84,7 @@ const productItemsSection6 = [
   },
   {
     img: img14,
+    imagePath: "/homepage_img/578a0998-c30a-47da-b796-d2577846a383.e1e26c98c16a7ca82ba1b0f48bb52eeb.jpeg",
     title: "Degree Men Antipespirant Deodorant Stick Cool",
     subtitle: "Rush 2.7 oz (Twin Pk)",
     priceMin: 4.47,
@@ -91,6 +96,7 @@ const productItemsSection6 = [
 const productItemsSection9 = [
   {
     img: img23,
+    imagePath: "/homepage_img/43f8e4f7-4425-4c00-9d1a-9284078b5063_1.4657312ded7a6c70b28b048a7fcedec9.jpeg",
     title: "Johnson's Head-To-Toe Tearless Gentle",
     subtitle: "Baby Wash and Shampoo",
     priceMin: 3.92,
@@ -100,6 +106,7 @@ const productItemsSection9 = [
   },
   {
     img: img24,
+    imagePath: "/homepage_img/77dbe743-6b87-47cb-ba6e-3e304050f0e2.0bbec6fd4cbc041a2d375a5f3d9e0029.jpeg",
     title: "Dove Nutritive Solutions Shampoo with Pump",
     subtitle: "Intensive Repair, 31 oz",
     priceMin: 6.98,
@@ -109,6 +116,7 @@ const productItemsSection9 = [
   },
   {
     img: img25,
+    imagePath: "/homepage_img/8864b07c-9595-43ae-98c0-3e64bb607b0b_1.337ee14285ad18300d7c3333837e55e0.webp",
     title: "Dove Advanced Care Dry Spray Antipespirant",
     subtitle: "Deodorant Powder Soft 3.8 oz",
     priceMin: 6.18,
@@ -118,6 +126,7 @@ const productItemsSection9 = [
   },
   {
     img: img26,
+    imagePath: "/homepage_img/79f440bd-199f-4913-aa75-669a18ae41ac_1.f6d1f5a03a62bf31171edfdace1df721.jpeg",
     title: "Degree Men Antipespirant Deodorant Stick Cool",
     subtitle: "Rush 2.7 oz (Twin Pk)",
     priceMin: 4.47,
@@ -130,6 +139,7 @@ const productItemsSection9 = [
 const productItemsSection11 = [
   {
     img: img31,
+    imagePath: "/homepage_img/0f8759e0-1354-40e0-afac-f0b03575692a.383bdb89ef2c6a3c4c74da5080ce1ac6.jpeg",
     title: "Johnson's Head-To-Toe Tearless Gentle",
     subtitle: "Baby Wash and Shampoo",
     priceMin: 3.92,
@@ -139,6 +149,7 @@ const productItemsSection11 = [
   },
   {
     img: img32,
+    imagePath: "/homepage_img/0a446936-6623-460f-96dc-80635c844efe.8e0eb5b0be9ca1dbafc6c45a8d65d46b.png",
     title: "Dove Nutritive Solutions Shampoo with Pump",
     subtitle: "Intensive Repair, 31 oz",
     priceMin: 6.98,
@@ -148,6 +159,7 @@ const productItemsSection11 = [
   },
   {
     img: img33,
+    imagePath: "/homepage_img/bd60d80c-7a3e-45b2-8d19-082863b4b52d_1.c3640382de6c2ef535811b6a20f35e0f.png",
     title: "Dove Advanced Care Dry Spray Antipespirant",
     subtitle: "Deodorant Powder Soft 3.8 oz",
     priceMin: 6.18,
@@ -157,6 +169,7 @@ const productItemsSection11 = [
   },
   {
     img: img34,
+    imagePath: "/homepage_img/6ef80f9a-c6e4-47e1-9e4a-cc257b7d724e_2.0715ced9b29cf0ba00f13e96e91eb6ca.png",
     title: "Degree Men Antipespirant Deodorant Stick Cool",
     subtitle: "Rush 2.7 oz (Twin Pk)",
     priceMin: 4.47,
@@ -175,7 +188,7 @@ const ShopCategories = () => {
         <div className="shopbycategory">
           {categoryItems.map((item, idx) => (
             <div key={idx}>
-              <img src={item.img} alt="" />
+              <img src={getImageUrl(item.img)} alt="" />
               <p>{item.label}</p>
             </div>
           ))}
@@ -192,7 +205,7 @@ const ShopCategories = () => {
             return (
               <div className={`product${idx + 1}`} key={idx}>
                 <div>
-                  <img src={item.img} alt="" />
+                  <img src={getImageUrl(item.imagePath)} alt="" />
                 </div>
                 <p>{item.title}</p>
                 <p>{item.subtitle}</p>
@@ -287,7 +300,6 @@ const ShopCategories = () => {
           })}
         </div>
         <div className="dots">
-          <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>
           <span class="dot"></span>

@@ -8,10 +8,13 @@ import Grid5 from "../assets/images/homepage_img/6b71d05c-23e3-4f3a-9eff-0900256
 import Grid6 from "../assets/images/homepage_img/048f43da-9da0-43fd-b499-4a8dc18a40c1.2c7fcb7a2a36197aa60bf40e29d57af3.jpeg";
 import Grid7 from "../assets/images/homepage_img/05da93cc-eaf7-479e-b7dc-8edae6f65aca.48a84e0b65c0935bbce8c4c90cf6c0f2.jpeg";
 import { ToggleBar } from "../context/toggle";
+import { getImageUrl } from "./utils";
+
 
 const gridProducts = [
   {
     img: Grid4,
+    imagePath: "/homepage_img/d648e0fc-25d4-4759-9b6e-fa1ec4c878fc.68d21b1a366df62b8d1e48d7a515467d.webp",
     title: "Johnson's Head-To-Toe Tearless Gentle",
     subtitle: "Baby Wash and Shampoo",
     priceMin: 3.92,
@@ -21,6 +24,7 @@ const gridProducts = [
   },
   {
     img: Grid5,
+    imagePath: "/homepage_img/6b71d05c-23e3-4f3a-9eff-09002563086b_1.ef47bb922f9a53465ed49326cc8e6936.jpeg",
     title: "Dove Nutritive Solutions Shampoo with Pump",
     subtitle: "Intensive Repair, 31 oz",
     priceMin: 6.98,
@@ -30,6 +34,7 @@ const gridProducts = [
   },
   {
     img: Grid6,
+    imagePath: "/homepage_img/048f43da-9da0-43fd-b499-4a8dc18a40c1.2c7fcb7a2a36197aa60bf40e29d57af3.jpeg",
     title: "Dove Advanced Care Dry Spray Antipespirant",
     subtitle: "Deodorant Powder Soft 3.8 oz",
     priceMin: 6.18,
@@ -39,12 +44,13 @@ const gridProducts = [
   },
   {
     img: Grid7,
-    title: "Degree Men Antipespirant Deodorant Stick Cool",
+    imagePath: "/homepage_img/05da93cc-eaf7-479e-b7dc-8edae6f65aca.48a84e0b65c0935bbce8c4c90cf6c0f2.jpeg",
+    title: "Degree Men Antipespirant Deodorant Stick Cool v2",
     subtitle: "Rush 2.7 oz (Twin Pk)",
     priceMin: 4.47,
     priceMax: 4.47,
     delivery: "2-day delivery",
-    button: "Choose options"
+    button: "Add to cart"
   }
 ];
 
@@ -106,7 +112,7 @@ const GridBanner = () => {
                      return (
                        <div className={`product${idx + 1}`} key={idx}>
                          <div>
-                           <img src={item.img} alt="" />
+                           <img src={getImageUrl(item.imagePath)} alt="" />
                          </div>
                          <p>{item.title}</p>
                          <p>{item.subtitle}</p>

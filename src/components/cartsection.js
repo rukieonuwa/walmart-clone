@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "../sidebarHp.css";
 import { ToggleBar } from "../context/toggle";
+import { getImageUrl } from "./utils";
 
 
 const Cartsection = () => {
@@ -39,7 +40,7 @@ const Cartsection = () => {
                       <p>${item.priceMin.toFixed(2)}</p>
                     </div>
                     <div className="cart-item-img">
-                      <img src={item.image} alt={item.title} />
+                      <img src={getImageUrl(item.imagePath)} alt={item.title} />
                     </div>
                   </div>
                 ))
